@@ -1,0 +1,15 @@
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/bin/Debug/net7.0/ProductHub.Application.deps.json
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/bin/Debug/net7.0/ProductHub.Application.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/bin/Debug/net7.0/ProductHub.Application.pdb
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.AssemblyInfoInputs.cache
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.AssemblyInfo.cs
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.csproj.CoreCompileInputs.cache
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/refint/ProductHub.Application.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.pdb
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ref/ProductHub.Application.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/bin/Debug/net7.0/ProductHub.Domain.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/bin/Debug/net7.0/ProductHub.Domain.pdb
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.csproj.AssemblyReference.cache
+/home/mikiyas/Documents/ProductHub/ProductHub.Application/obj/Debug/net7.0/ProductHub.Application.csproj.CopyComplete

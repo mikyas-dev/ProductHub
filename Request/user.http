@@ -1,0 +1,10 @@
+@host=http://localhost:5218
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMzdkY2FiZS1iZTcyLTRmNzUtYWVlNi1lZmRiMmRlMzUzMGUiLCJqdGkiOiI4ZjM0NTAxOS03NGRkLTQ1YTMtYmQwYy0yYjQ2NDg1NDQ3ZWQiLCJ1bmlxdWVfbmFtZSI6Im1pa2l5YXMiLCJlbWFpbCI6Im1pa2kxMW1pY2FoQGdtYWlsLmNvbSIsImV4cCI6MTY5OTQ2MjY1MywiaXNzIjoiUHJvZHVjdEh1YiIsImF1ZCI6IlByb2R1Y3RIdWIifQ.hkZUJ_W6T8BS_Nkpopz2YK69nIqMEw7Gjd4lOeEGPvw
+POST {{host}}/user/role
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "userId": "00a61a64-9554-4149-a00d-d5fde43bf9e1",
+  "role": "Admin"
+}

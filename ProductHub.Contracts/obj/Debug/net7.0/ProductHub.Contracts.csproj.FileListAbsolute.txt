@@ -1,0 +1,11 @@
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/bin/Debug/net7.0/ProductHub.Contracts.deps.json
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/bin/Debug/net7.0/ProductHub.Contracts.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/bin/Debug/net7.0/ProductHub.Contracts.pdb
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ProductHub.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ProductHub.Contracts.AssemblyInfoInputs.cache
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ProductHub.Contracts.AssemblyInfo.cs
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ProductHub.Contracts.csproj.CoreCompileInputs.cache
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ProductHub.Contracts.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/refint/ProductHub.Contracts.dll
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ProductHub.Contracts.pdb
+/home/mikiyas/Documents/ProductHub/ProductHub.Contracts/obj/Debug/net7.0/ref/ProductHub.Contracts.dll
