@@ -1,7 +1,8 @@
+using ProductHub.Domain.Booking.ValueObjects;
 using ProductHub.Domain.Common.Models;
 using ProductHub.Domain.Product.ValueObjects;
 
-namespace ProductHub.Domain.Product.Entities;
+namespace ProductHub.Domain.Booking;
 
 public class Booking : AggregateRoot<BookingId>
 {
@@ -9,16 +10,19 @@ public class Booking : AggregateRoot<BookingId>
     public DateTime EndDate { get; private set; }
     public int Quantity { get; private set; }
 
-    public Booking(BookingId id, DateTime startDate, DateTime endDate, int quantity) : base(id)
+    public ProductId ProductId { get; private set; }
+
+    public Booking(BookingId id, DateTime startDate, DateTime endDate, int quantity, ProductId productId) : base(id)
     {
         StartDate = startDate;
         EndDate = endDate;
         Quantity = quantity;
+        ProductId = productId;
     }
 
-    public static Booking Create(DateTime startDate, DateTime endDate, int quantity)
+    public static Booking Create(DateTime startDate, DateTime endDate, int quantity, ProductId productId)
     {
-        return new(BookingId.CreateUnique(), startDate, endDate, quantity);
+        return new(BookingId.CreateUnique(), startDate, endDate, quantity, productId);
     }
 
     public void Update(DateTime startDate, DateTime endDate, int quantity)

@@ -1,6 +1,6 @@
 using ProductHub.Domain.Common.Models;
 
-namespace ProductHub.Domain.Product.ValueObjects;
+namespace ProductHub.Domain.Booking.ValueObjects;
 
 public class BookingId : ValueObject
 {

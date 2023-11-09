@@ -1,7 +1,7 @@
 using ProductHub.Domain.Category.ValueObjects;
 using ProductHub.Domain.Common.Models;
 
-namespace ProductHub.Domain.User;
+namespace ProductHub.Domain.Category;
 
 public sealed class Category : AggregateRoot<CategoryId>
 {
