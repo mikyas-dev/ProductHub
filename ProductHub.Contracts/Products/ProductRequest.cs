@@ -1,11 +1,12 @@
 namespace ProductHub.Contracts.Products
 {
-    public record ProductRequest(
+    public record CreateProductRequest(
         string Name,
         string Description,
         Guid CategoryId,
         decimal Price,
-        int Quantity
+        int Quantity,
+        Guid UserId
     );
 
     public record UpdateProductRequest(
@@ -13,8 +14,7 @@ namespace ProductHub.Contracts.Products
         string Description,
         Guid CategoryId,
         decimal Price,
-        int Quantity,
-        Guid Id
+        int Quantity
     );
 
     public record DeleteProductRequest(

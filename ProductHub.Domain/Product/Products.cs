@@ -36,14 +36,14 @@ public class Product : AggregateRoot<ProductId>
         return new(ProductId.CreateUnique(), name, description, price, categoryId, userId, quantity);
     }
 
-    public void Update(string name, string description, decimal price, CategoryId categoryId)
+    public void Update(string name, string description, decimal price, CategoryId categoryId, int quantity)
     {
         Name = name;
         Description = description;
         Price = price;
         CategoryId = categoryId;
+        Quantity = quantity;
     }
-
 
     #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     private Product() { }

@@ -51,4 +51,13 @@ var tokenHandler = new JwtSecurityTokenHandler();
         return token;
         
     }
+
+    public string? GetUserIdFromClaim ()
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var token = tokenHandler.ReadJwtToken(_jwtSettings.Secret);
+        var claims = token.Claims;
+        var userId = claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub)?.Value;
+        return userId;        
+    }
 }

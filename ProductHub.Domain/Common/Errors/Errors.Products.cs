@@ -29,6 +29,10 @@ public static partial class Errors
         public static Error ProductNotCreated => Error.Validation(
             code: "Product.ProductNotCreated",
             description: "Product not created.");
+        
+        public static Error ProductDonNotBelongToUser => Error.Validation(
+            code: "Product.ProductDonNotBelongToUser",
+            description: "Product don't belong to user.");
 
     }
 }
