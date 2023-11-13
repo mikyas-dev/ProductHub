@@ -15,16 +15,11 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
 
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
 
-    private readonly IUserRepository _userRepository;
 
-    private readonly ICategoriesRepository _categoriesRepository;
-
-    public UpdateProductCommandHandler(IProductRepository productRepository, IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository, ICategoriesRepository categoriesRepository)
+    public UpdateProductCommandHandler(IProductRepository productRepository, IJwtTokenGenerator jwtTokenGenerator)
     {
         _productRepository = productRepository;
         _jwtTokenGenerator = jwtTokenGenerator;
-        _userRepository = userRepository;
-        _categoriesRepository = categoriesRepository;
     }
 
 
@@ -49,17 +44,6 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
             return Errors.Product.ProductDonNotBelongToUser;
         }
 
-        var category = await _categoriesRepository.GetCategoryByIdAsync(request.CategoryId);
-        if (category == null)
-        {
-            return Errors.Category.CategoryNotFound;
-        }
-
-        var user = _userRepository.GetUserByIdAsync(Guid.Parse(userId));
-        if (user == null)
-        {
-            return Errors.User.UserNotFound;
-        }
 
 
         product.Update(request.Name, request.Description, request.Price, CategoryId.Create(request.CategoryId), request.Quantity);
@@ -68,12 +52,12 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
             product.Id.Value,
             product.Name,
             product.Description,
-            category.Name,
-            category.Description,
+            product.Category.Name,
+            product.Category.Description,
             product.Price,
             product.Quantity,
             product.IsAvailable,
-            user.UserName
+            product.User.UserName
             );
         // rest of the code
     }

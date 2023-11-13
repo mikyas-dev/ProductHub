@@ -3,49 +3,45 @@ using MediatR;
 using ProductHub.Application.Common.Interfaces.Authentication;
 using ProductHub.Application.Common.Interfaces.Persistence;
 using ProductHub.Application.ProductApp.Common;
+using ProductHub.Domain.Common.Errors;
+using ProductHub.Domain.User.ValueObjects;
 
 namespace ProductHub.Application.ProductApp.Query.AllProduct;
 
 public class AllProductQueryHandler : IRequestHandler<AllProductQuery, ErrorOr<IEnumerable<ProductResult>>>
 {
     private readonly IProductRepository _productRepository;
-    private readonly ICategoriesRepository _categoryRepository;
-    private readonly IUserRepository _userRepository;
+    private readonly IJwtTokenGenerator _jwtTokenGenerator;
 
-    public AllProductQueryHandler(IProductRepository productRepository, ICategoriesRepository categoryRepository,
-        IUserRepository userRepository)
+    public AllProductQueryHandler(IProductRepository productRepository, IJwtTokenGenerator jwtTokenGenerator)
     {
         _productRepository = productRepository;
-        _categoryRepository = categoryRepository;
-        _userRepository = userRepository;
+        _jwtTokenGenerator = jwtTokenGenerator;
     }
 
     public async Task<ErrorOr<IEnumerable<ProductResult>>> Handle(AllProductQuery request,
         CancellationToken cancellationToken)
     {
-        var products = await _productRepository.GetProductsAsync();
+        
+        var products = request.MyProducts
+            ? await _productRepository.GetProductsByUserIdAsync(UserId.Create(request.UserId!.Value))
+            : await _productRepository.GetProductsAsync();
 
         var productResults = new List<ProductResult>();
 
         foreach (var product in products)
         {
-            var category = await _categoryRepository.GetCategoryByIdAsync(product.CategoryId.Value);
-            var user =  _userRepository.GetUserByIdAsync(product.UserId.Value);
-            if (category == null || user == null)
-            {
-                continue;
-            }
-
             productResults.Add(new ProductResult(
                 product.Id.Value,
-                product.Name, 
-                category.Name, 
-                category.Description,
-                product.Description, 
+                product.Name,
+                product.Description,
+                product.Category.Name,
+                product.Category.Description,
                 product.Price,
-                product.Quantity, 
+                product.Quantity,
                 product.IsAvailable,
-                user.UserName));
+                product.User.UserName
+            ));
         }
 
         return productResults;

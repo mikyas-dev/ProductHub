@@ -18,8 +18,5 @@ public class CategoryMappingConfig : IRegister
         config.NewConfig<CreateCategoryRequest, CreateCategoryCommand>()
             .Map(dest => dest, src => src);
         
-        config .NewConfig<(UpdateProductRequest request, string id), UpdateProductCommand>()
-            .Map(dest => dest.Id, src => Guid.Parse(src.id))
-            .Map(dest => dest, src => src.request);
     }
 }

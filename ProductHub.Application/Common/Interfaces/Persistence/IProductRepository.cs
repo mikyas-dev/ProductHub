@@ -1,4 +1,5 @@
 using ProductHub.Domain.Product;
+using ProductHub.Domain.User.ValueObjects;
 
 namespace ProductHub.Application.Common.Interfaces.Persistence;
 
@@ -9,4 +10,5 @@ public interface IProductRepository
     Task<List<Product>> GetProductsAsync();
     Task UpdateProductAsync(Product product);
     Task DeleteProductAsync(Product product);
+    Task<List<Product>> GetProductsByUserIdAsync(UserId userId);
 }

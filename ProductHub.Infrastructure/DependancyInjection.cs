@@ -35,6 +35,8 @@ public static class DependencyInjection
         services.AddDbContext<ProductHubDbContext>(options =>
             options.UseNpgsql("Host=127.0.0.1;Database=ProductHub;Username=mikiyas;Password=1q2w3e4r"));
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ICategoriesRepository, CategoriesRepository>();
         return services;
     }
     

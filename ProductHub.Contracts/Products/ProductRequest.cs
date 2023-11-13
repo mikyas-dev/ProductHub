@@ -5,16 +5,16 @@ namespace ProductHub.Contracts.Products
         string Description,
         Guid CategoryId,
         decimal Price,
-        int Quantity,
-        Guid UserId
-    );
+        int Quantity
+        );
 
     public record UpdateProductRequest(
         string Name,
         string Description,
         Guid CategoryId,
         decimal Price,
-        int Quantity
+        int Quantity,
+        Guid Id
     );
 
     public record DeleteProductRequest(
